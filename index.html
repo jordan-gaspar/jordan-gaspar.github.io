@@ -3,4 +3,43 @@
 </head>
 <body>
   <p>Calculusator Calculus Calculator</p>
+  <p>If any calculation returns "null", that means that the answer does not exist. Incorrect answers like +/- infinty may be returned if your function and makes the calculator divide by zero.</p>
+  <p>
+    <label for="func">Enter an expression:</label>
+    <input id="func" name="func" type="text" value="2x+5" />
+    <br>
+    <label for="delta">Enter a value for delta/step size:</label>
+    <input id="delta" min="0" name="delta" type="number" value="0.00001">
+  </p>
+  <p><label for="options">Choose something to calculate:</label></p>
+  <select id="options" name="options">
+    <option value="limit">Limits</option>
+    <option value="deriv">Derivatives</option>
+    <option value="extreme">Function Extrema</option>
+    <option value="difeq">First Order Differential Equations</option>
+    <option value="integral">Integrals</option>
+    <option value="volume">Shape Volumes</option>
+    <option value="arclength">Arc Length</option>
+    <option value="vector">Vector Functions</option>
+    <option value="polar">Polar Functions</option>
+    <option value="lagrange">Lagrange Error Bound</option>
+  </select><!--Install latex later with jsmath-->
+  <div class="limcalculator">
+    <p>Left limit:</p>
+    <p>Right limit:</p>
+    <p>Limit:</p>
+  </div>
+  <div class="derivcalculator">
+    <p>Left derivative:</p>
+    <p>Right derivative:</p>
+    <p>Derivative: </p>
+  </div>
+  <div class="extremecalculator"></div>
+  <div class="difeqcalculator"></div>
+  <div class="integralcalculator"></div>
+  <div class="volumecalculator"></div>
+  <div class="arclengthcalculator"></div>
+  <div class="vectorcalculator"></div>
+  <div class="polarcalculator"></div>
+  <div class="lagrangecalculator"></div>
 </body>
