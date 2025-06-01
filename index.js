@@ -12,9 +12,9 @@ function hide(div)
   element.style.display = "none";
 }
 
-function toggleAll()
+function toggleAll(dropdown)
 {
-  const selected = document.getElementById("options").value;
+  const selected = dropdown.value;
   for (let i = 0; i < options.length; ++i)
   {
     if (selected === options[i])
