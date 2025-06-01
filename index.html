@@ -5,7 +5,7 @@
 </head>
 <body>
   <p>Calculusator Calculus Calculator</p>
-  <p>If any calculation returns "null", that means that the answer does not exist. Incorrect answers like \(\pm\infty\) may be returned if your function and makes the calculator divide by zero.</p>
+  <p>If any calculation returns "null", that means that the answer does not exist. Incorrect answers like \(\pm\infty\) may be returned if your function and values entered make the calculator divide by zero.</p>
   <p>
     <label for="func">Enter an expression:</label>
     <input id="func" name="func" type="text" value="2x+5" />
@@ -25,23 +25,23 @@
     <option value="vector">Vector Functions</option>
     <option value="polar">Polar Functions</option>
     <option value="lagrange">Lagrange Error Bound</option>
-  </select><!--Install latex later with jsmath-->
-  <div class="limitcalculator">
+  </select>
+  <div id="limitcalculator">
     <p>\(lim_{x\to a^-} f(x)=\)</p>
     <p>\(lim_{x\to a^+} f(x)=\)</p>
     <p>\(lim_{x\to a} f(x)=\)</p>
   </div>
-  <div class="derivcalculator" style="display:none;">
+  <div id="derivcalculator" style="display:none;">
     <p>Left derivative:</p>
     <p>Right derivative:</p>
     <p>Derivative: </p>
   </div>
-  <div class="extremecalculator" style="display:none;"></div>
-  <div class="difeqcalculator" style="display:none;"></div>
-  <div class="integralcalculator" style="display:none;"></div>
-  <div class="volumecalculator" style="display:none;"></div>
-  <div class="arclengthcalculator" style="display:none;"></div>
-  <div class="vectorcalculator" style="display:none;"></div>
-  <div class="polarcalculator" style="display:none;"></div>
-  <div class="lagrangecalculator" style="display:none;"></div>
+  <div id="extremecalculator" style="display:none;"></div>
+  <div id="difeqcalculator" style="display:none;"></div>
+  <div id="integralcalculator" style="display:none;"></div>
+  <div id="volumecalculator" style="display:none;"></div>
+  <div id="arclengthcalculator" style="display:none;"></div>
+  <div id="vectorcalculator" style="display:none;"></div>
+  <div id="polarcalculator" style="display:none;"></div>
+  <div id="lagrangecalculator" style="display:none;"></div>
 </body>
