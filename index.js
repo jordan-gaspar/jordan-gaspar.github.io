@@ -1,4 +1,4 @@
-const options = ["limit", "deriv", "extreme", "difeq", "integral", "volume", "arclength", "vector", "polar", "lagrange"]
+const options = ["limit", "deriv", "extreme", "difeq", "integral", "volume", "arclength", "vector", "polar", "lagrange"];
 
 function show(div)
 {
@@ -19,11 +19,11 @@ function toggleAll(dropdown)
   {
     if (selected === options[i])
     {
-      show(selected + "calculator")
+      show(options[i] + "calculator");
     }
     else
     {
-      hide(selected + "calculator")
+      hide(options[i] + "calculator");
     }
   }
 }
