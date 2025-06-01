@@ -1,6 +1,6 @@
 <head>
   <title>Calculusator</title>
-  
+  <script type="text/javascript" src="index.js">
   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 </head>
@@ -15,7 +15,7 @@
     <input id="delta" min="0" name="delta" type="number" value="0.00001">
   </p>
   <p><label for="options">Choose something to calculate:</label></p>
-  <select id="options" name="options">
+  <select id="options" name="options" onchange="toggleAll()">
     <option value="limit">Limits</option>
     <option value="deriv">Derivatives</option>
     <option value="extreme">Function Extrema</option>
