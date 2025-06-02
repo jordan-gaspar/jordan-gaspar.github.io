@@ -7,9 +7,10 @@
 <body>
   <p>Calculusator Calculus Calculator</p>
   <p>If any calculation returns an empty result, that means that the answer does not exist. Incorrect answers like \(\pm\infty\) may be returned if your function and values entered make the calculator divide by zero.</p>
+  <p>If you want to enter a math function, you must use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math">javascript math notation</a> (e.g. Math.pow(x, 2) for x squared).</p>
   <p>
     <label for="func">Enter an expression:</label>
-    <input id="func" name="func" type="text" value="2x+5" onchange="reloadCalculations()">
+    <input id="func" name="func" type="text" value="2*x+5" onchange="reloadCalculations()">
     <br>
     <label for="delta">Enter a value for delta/step size:</label>
     <input id="delta" min=0 name="delta" type="number" value=0.00001 onchange="reloadCalculations()">
@@ -44,6 +45,15 @@
     <p>\(f'(a)=\)<span id=derivCalculation></span></p>
   </div>
   <div id="difeqcalculator" style="display:none;">
+    <label for="difeqT">Enter the value to find:</label>
+    <input id="difeqT" name="difeqT" type="number" value=5 onchange="reloadCalculations()">
+    <br>
+    <label for="difeqX">Enter the x value of a point:</label>
+    <input id="difeqX" name="difeqX" type="number" value=2 onchange="reloadCalculations()">
+    <br>
+    <label for="difeqY">Enter the y value of a point:</label>
+    <input id="difeqY" name="difeqY" type="number" value=3 onchange="reloadCalculations()">
+    <br>
     <p>\(g(c)=\)<span id=difeqCalculation></span></p>
   </div>
   <div id="integralcalculator" style="display:none;">
