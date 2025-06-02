@@ -34,12 +34,26 @@ function limit(x, delta, maxError)
 
 function leftDerivative(x, delta)
 {
-    
+    return (f(x) - f(x - delta))/delta;
 }
 
 function rightDerivative(x, delta)
 {
-    
+    return (f(x + delta) - f(x))/delta;
+}
+
+function derivative(x, delta, maxError)
+{
+    leftDeriv = leftDerivative(x, delta);
+    rightDeriv = rightDerivative(x, delta);
+    if (Math.abs(leftDeriv - rightDeriv) <= maxError)
+    {
+        return (leftDeriv + rightDeriv)/2;
+    }
+    else
+    {
+        return null; //DNE
+    }
 }
 
 //trapezoidal riemann sum
