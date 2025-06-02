@@ -3,11 +3,8 @@
   <script type="text/javascript" src="calculator.js"></script>
   <script type="text/javascript" src="index.js"></script>
   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-  <script type="text/javascript id="loadscript">
-    reloadCalculations();
-  </script>
 </head>
-<body>
+<body onload="reloadCalculations()">
   <p>Calculusator Calculus Calculator</p>
   <p>If any calculation returns an empty result, that means that the answer does not exist. Incorrect answers like \(\pm\infty\) may be returned if your function and values entered make the calculator divide by zero.</p>
   <p>If you want to enter a math function, you must use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">javascript math notation</a> (e.g. Math.pow(x, 2) for x squared).</p>
