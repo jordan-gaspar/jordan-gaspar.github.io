@@ -1,5 +1,3 @@
-import * as calc from "./calculator.js";
-
 const options = ["limit", "deriv", "difeq", "integral", "volume", "arclength", "lagrange"];
 
 function show(div)
@@ -40,8 +38,8 @@ function reloadCalculations()
   const maxError = document.getElementById("err").value;
   //LIMITS
   const limValue = document.getElementById("limValue").value;
-  document.getElementById("leftLimCalculation").innerHTML = calc.leftLimit(func, limValue, delta);
-  document.getElementById("rightLimCalculation").innerHTML = calc.rightLimit(func, limValue, delta);
-  document.getElementById("limCalculation").innerHTML = calc.limit(func, limValue, delta, maxError);
+  document.getElementById("leftLimCalculation").innerHTML = leftLimit(func, limValue, delta);
+  document.getElementById("rightLimCalculation").innerHTML = rightLimit(func, limValue, delta);
+  document.getElementById("limCalculation").innerHTML = limit(func, limValue, delta, maxError);
   //DERIVATIVES
 }
