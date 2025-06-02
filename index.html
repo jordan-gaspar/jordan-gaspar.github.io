@@ -56,6 +56,15 @@
     <p>\(\int_a^b f(x) dx=\)<span id=integralCalculation></span></p>
   </div>
   <div id="volumecalculator" style="display:none;">
+    <label for="volumeLowerBound">Enter a lower bound:</label>
+    <input id="volumeLowerBound" name="volumeLowerBound" type="number" value=0 onchange="reloadCalculations()">
+    <br>
+    <label for="volumeUpperBound">Enter an upper bound:</label>
+    <input id="volumeUpperBound" name="volumeUpperBound" type="number" value=3 onchange="reloadCalculations()">
+    <br>
+    <label for="volFunc">Enter an expression for your area function:</label>
+    <input id="volFunc" name="volFunc" type="text" value="Math.pow(x, 2)" onchange="reloadCalculations()">
+    <br>
     <p>\(V\)=<span id=volumeCalculation></span></p>
   </div>
   <div id="arclengthcalculator" style="display:none;">
