@@ -94,7 +94,14 @@ function solveDifferentialEquation(func, t, x, y, delta) //finds f(t)
   }
 }
 
-function calculateVolume()
+function calculateVolume(areaFunc, a, b, delta)
 {
-    return integrate
+    return integrate(areaFunc, a, b, delta);
+}
+
+function arcLength(func, a, b, delta, maxError)
+{
+    return integrate((x) => {
+                        return Math.sqrt(1 + Math.pow(derivative(func, x, delta, maxError), 2));
+                    }, a, b, delta);
 }
