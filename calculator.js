@@ -3,10 +3,12 @@ function f(x)
     return x;
 }
 
-function df(x, y)
+function dg(x, y)
 {
   return 2x + y;
 }
+
+
 
 function leftLimit(x, delta)
 {
@@ -82,8 +84,8 @@ function solveDifferentialEquation(t, x, y, delta) //finds f(t)
   {
     while (x > t)
     {
-      slope = df(x, y);
-      y = slope*delta + y;
+      slope = dg(x, y);
+      y = -1*slope*delta + y;
       x -= delta;
     }
     return y;
@@ -92,7 +94,7 @@ function solveDifferentialEquation(t, x, y, delta) //finds f(t)
   {
     while (x < t)
     {
-      slope = df(x, y);
+      slope = dg(x, y);
       y = slope*delta + y;
       x += delta;
     }
