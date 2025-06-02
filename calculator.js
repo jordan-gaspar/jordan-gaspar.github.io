@@ -10,8 +10,8 @@ function rightLimit(func, x, delta)
 
 function limit(func, x, delta, maxError)
 {
-    leftLim = leftLimit(func, x, delta);
-    rightLim = rightLimit(func, x, delta);
+    const leftLim = leftLimit(func, x, delta);
+    const rightLim = rightLimit(func, x, delta);
     if (Math.abs(leftLim - rightLim) <= maxError)
     {
         return (leftLim + rightLim)/2;
@@ -34,8 +34,8 @@ function rightDerivative(func, x, delta)
 
 function derivative(func, x, delta, maxError)
 {
-    leftDeriv = leftDerivative(func, x, delta);
-    rightDeriv = rightDerivative(func, x, delta);
+    const leftDeriv = leftDerivative(func, x, delta);
+    const rightDeriv = rightDerivative(func, x, delta);
     if (Math.abs(leftDeriv - rightDeriv) <= maxError)
     {
         return (leftDeriv + rightDeriv)/2;
@@ -54,8 +54,8 @@ function integrate(func, a, b, delta)
         return integrate(func, b, a, delta);
     }
     
-    sum = 0;
-    i = a;
+    let sum = 0;
+    let i = a;
     while (i <= b)
     {
         sum += (delta)*((func(i)+func(i+delta)/2);
@@ -72,7 +72,7 @@ function solveDifferentialEquation(func, t, x, y, delta) //finds f(t)
   {
     while (x > t)
     {
-      slope = func(x, y);
+      let slope = func(x, y);
       y = -1*slope*delta + y;
       x -= delta;
     }
@@ -82,7 +82,7 @@ function solveDifferentialEquation(func, t, x, y, delta) //finds f(t)
   {
     while (x < t)
     {
-      slope = func(x, y);
+      let slope = func(x, y);
       y = slope*delta + y;
       x += delta;
     }
@@ -104,4 +104,27 @@ function arcLength(func, a, b, delta, maxError)
     return integrate((x) => {
                         return Math.sqrt(1 + Math.pow(derivative(func, x, delta, maxError), 2));
                     }, a, b, delta);
+}
+
+function lagrangeM()
+{
+}
+
+function factorial(n)
+{
+    if (n == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return n*factorial(n - 1);
+    }
+}
+
+function lagrangeErrorBound(func, x, c, n)
+{
+    const M;
+
+    return M*Math.pow(x - c, n + 1)/factorial(n + 1);
 }
