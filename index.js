@@ -31,13 +31,11 @@ function toggleAll(dropdown)
 function reloadCalculations()
 {
   const funcText = document.getElementById("func").value;
-  const func = (x) => {
-    return eval(funcText);
-  };
-  const delta = document.getElementById("delta").value;
-  const maxError = document.getElementById("err").value;
+  const func = new Function("x", "return " + funcText);
+  const delta = parseFloat(document.getElementById("delta").value);
+  const maxError = parseFloat(document.getElementById("err").value);
   //LIMITS
-  const limValue = document.getElementById("limValue").value;
+  const limValue = parseFloat(document.getElementById("limValue").value);
   document.getElementById("leftLimCalculation").innerHTML = leftLimit(func, limValue, delta);
   document.getElementById("rightLimCalculation").innerHTML = rightLimit(func, limValue, delta);
   document.getElementById("limCalculation").innerHTML = limit(func, limValue, delta, maxError);
