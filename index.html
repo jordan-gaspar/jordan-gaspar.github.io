@@ -10,13 +10,13 @@
   <p>If you want to enter a math function, you must use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">javascript math notation</a> (e.g. Math.pow(x, 2) for x squared).</p>
   <p>
     <label for="func">Enter an expression:</label>
-    <input id="func" name="func" type="text" value="2*x+5" onchange="reloadCalculations()">
+    <input id="func" name="func" type="text" autocomplete="off" value="2*x+5" onchange="reloadCalculations()">
     <br>
     <label for="delta">Enter a value for delta/step size:</label>
-    <input id="delta" min=0 name="delta" type="number" value=0.00001 onchange="reloadCalculations()">
+    <input id="delta" min=0 name="delta" autocomplete="off" type="number" value=0.00001 onchange="reloadCalculations()">
     <br>
     <label for="err">Enter a value for the maximum error:</label>
-    <input id="err" min=0 name="err" type="number" value=0.001 onchange="reloadCalculations()">
+    <input id="err" min=0 name="err" type="number" autocomplete="off" value=0.001 onchange="reloadCalculations()">
   </p>
   <p><label for="options">Choose something to calculate:</label></p>
   <select id="options" name="options" autocomplete="off" onchange="toggleAll(this)">
@@ -30,7 +30,7 @@
   </select>
   <div id="limitcalculator">
     <label for="limValue">Enter a value to approach:</label>
-    <input id="limValue" name="limValue" type="number" value=5 onchange="reloadCalculations()">
+    <input id="limValue" name="limValue" autocomplete="off" type="number" value=5 onchange="reloadCalculations()">
     <br>
     <p>\(lim_{x\to a^-} f(x)=\)<span id=leftLimCalculation></span></p>
     <p>\(lim_{x\to a^+} f(x)=\)<span id=rightLimCalculation></span></p>
@@ -38,69 +38,69 @@
   </div>
   <div id="derivcalculator" style="display:none;">
     <label for="derivValue">Enter the value to take the derivative at:</label>
-    <input id="derivValue" name="derivValue" type="number" value=3 onchange="reloadCalculations()">
+    <input id="derivValue" name="derivValue" autocomplete="off" type="number" value=3 onchange="reloadCalculations()">
     <br>
     <p>\(f_{-}'(a)=\)<span id=leftDerivCalculation></span></p>
     <p>\(f_{+}'(a)=\)<span id=rightDerivCalculation></span></p>
     <p>\(f'(a)=\)<span id=derivCalculation></span></p>
   </div>
   <div id="difeqcalculator" style="display:none;">
-    <label for="difeqFunc">Enter the value to find:</label>
-    <input id="difeqFunc" name="difeqFunc" type="text" value="x/y" onchange="reloadCalculations()">
+    <label for="difeqFunc">Enter the differential equation (you may use x and y in this):</label>
+    <input id="difeqFunc" name="difeqFunc" autocomplete="off" type="text" value="x/y" onchange="reloadCalculations()">
     <br>
     <label for="difeqT">Enter the value to find:</label>
-    <input id="difeqT" name="difeqT" type="number" value=5 onchange="reloadCalculations()">
+    <input id="difeqT" name="difeqT" autocomplete="off"  type="number" value=5 onchange="reloadCalculations()">
     <br>
     <label for="difeqX">Enter the x value of a point:</label>
-    <input id="difeqX" name="difeqX" type="number" value=2 onchange="reloadCalculations()">
+    <input id="difeqX" name="difeqX" autocomplete="off" type="number" value=2 onchange="reloadCalculations()">
     <br>
     <label for="difeqY">Enter the y value of a point:</label>
-    <input id="difeqY" name="difeqY" type="number" value=3 onchange="reloadCalculations()">
+    <input id="difeqY" name="difeqY" autocomplete="off" type="number" value=3 onchange="reloadCalculations()">
     <br>
     <p>\(g(c)=\)<span id=difeqCalculation></span></p>
   </div>
   <div id="integralcalculator" style="display:none;">
     <label for="integralLowerBound">Enter a lower bound:</label>
-    <input id="integralLowerBound" name="integralLowerBound" type="number" value=-2 onchange="reloadCalculations()">
+    <input id="integralLowerBound" autocomplete="off" name="integralLowerBound" type="number" value=-2 onchange="reloadCalculations()">
     <br>
     <label for="integralUpperBound">Enter an upper bound:</label>
-    <input id="integralUpperBound" name="integralUpperBound" type="number" value=4 onchange="reloadCalculations()">
+    <input id="integralUpperBound" autocomplete="off" name="integralUpperBound" type="number" value=4 onchange="reloadCalculations()">
     <br>
     <p>\(\int_a^b f(x) dx=\)<span id=integralCalculation></span></p>
   </div>
   <div id="volumecalculator" style="display:none;">
     <label for="volumeLowerBound">Enter a lower bound:</label>
-    <input id="volumeLowerBound" name="volumeLowerBound" type="number" value=0 onchange="reloadCalculations()">
+    <input id="volumeLowerBound" autocomplete="off" name="volumeLowerBound" type="number" value=0 onchange="reloadCalculations()">
     <br>
     <label for="volumeUpperBound">Enter an upper bound:</label>
-    <input id="volumeUpperBound" name="volumeUpperBound" type="number" value=3 onchange="reloadCalculations()">
+    <input id="volumeUpperBound" autocomplete="off" name="volumeUpperBound" type="number" value=3 onchange="reloadCalculations()">
     <br>
     <label for="volFunc">Enter an expression for your area function:</label>
-    <input id="volFunc" name="volFunc" type="text" value="Math.pow(x, 2)" onchange="reloadCalculations()">
+    <input id="volFunc" name="volFunc" autocomplete="off" type="text" value="Math.pow(x, 2)" onchange="reloadCalculations()">
     <br>
     <p>\(V\)=<span id=volumeCalculation></span></p>
   </div>
   <div id="arclengthcalculator" style="display:none;">
     <label for="lengthLowerBound">Enter a lower bound:</label>
-    <input id="lengthLowerBound" name="lengthLowerBound" type="number" value=0 onchange="reloadCalculations()">
+    <input id="lengthLowerBound" autocomplete="off" name="lengthLowerBound" type="number" value=0 onchange="reloadCalculations()">
     <br>
     <label for="lengthUpperBound">Enter an upper bound:</label>
-    <input id="lengthUpperBound" name="lengthUpperBound" type="number" value=3 onchange="reloadCalculations()">
+    <input id="lengthUpperBound" autocomplete="off" name="lengthUpperBound" type="number" value=3 onchange="reloadCalculations()">
     <br>
     <p>\(L=\)<span id=lengthCalculation></span></p>
   </div>
   <div id="lagrangecalculator" style="display:none;">
     <label for="lagrangeN">Enter the degree of the taylor polynomial:</label>
-    <input id="lagrangeN" name="lagrangeN" min=0 type="number" value=3 onchange="reloadCalculations()">
+    <input id="lagrangeN" name="lagrangeN" autocomplete="off" min=0 type="number" value=3 onchange="reloadCalculations()">
     <br>
     <label for="lagrangeC">Enter the centre of the taylor polynomial:</label>
-    <input id="lagrangeC" name="lagrangeC" type="number" value=0 onchange="reloadCalculations()">
+    <input id="lagrangeC" name="lagrangeC" autocomplete="off" type="number" value=0 onchange="reloadCalculations()">
     <br>
     <label for="lagrangeX">Enter the x value to evaluate at:</label>
-    <input id="lagrangeX" name="lagrangeX" type="number" value=2 onchange="reloadCalculations()">
+    <input id="lagrangeX" name="lagrangeX" autocomplete="off" type="number" value=2 onchange="reloadCalculations()">
     <br>
     <label for="lagrangeM">Enter the maximum of the absolute value of the N+1th derivative of your function:</label>
-    <input id="lagrangeM" name="lagrangeM" min=0 type="number" value=30 onchange="reloadCalculations()">
+    <input id="lagrangeM" name="lagrangeM" autocomplete="off" min=0 type="number" value=30 onchange="reloadCalculations()">
     <br>
     <p>\(E=\)<span id=errorCalculation></span></p>
   </div>
