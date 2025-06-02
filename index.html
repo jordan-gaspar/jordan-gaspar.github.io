@@ -9,13 +9,13 @@
   <p>If any calculation returns "null", that means that the answer does not exist. Incorrect answers like \(\pm\infty\) may be returned if your function and values entered make the calculator divide by zero.</p>
   <p>
     <label for="func">Enter an expression:</label>
-    <input id="func" name="func" type="text" value="2x+5" />
+    <input id="func" name="func" type="text" value="2x+5" onchange="reloadCalculations()">
     <br>
     <label for="delta">Enter a value for delta/step size:</label>
-    <input id="delta" min=0 name="delta" type="number" value=0.00001>
+    <input id="delta" min=0 name="delta" type="number" value=0.00001 onchange="reloadCalculations()">
     <br>
     <label for="err">Enter a value for the maximum error:</label>
-    <input id="err" min=0 name="err" type="number" value=0.001>
+    <input id="err" min=0 name="err" type="number" value=0.001 onchange="reloadCalculations()">
   </p>
   <p><label for="options">Choose something to calculate:</label></p>
   <select id="options" name="options" autocomplete="off" onchange="toggleAll(this)">
@@ -29,7 +29,7 @@
   </select>
   <div id="limitcalculator">
     <label for="limvalue">Enter a value to approach:</label>
-    <input id="limvalue" name="limvalue" type="number" value=5>
+    <input id="limvalue" name="limvalue" type="number" value=5 onchange="reloadCalculations()">
     <br>
     <p>\(lim_{x\to a^-} f(x)=\)<span id=leftLimCalculation></span></p>
     <p>\(lim_{x\to a^+} f(x)=\)<span id=rightLimCalculation></span></p>
@@ -37,7 +37,7 @@
   </div>
   <div id="derivcalculator" style="display:none;">
     <label for="derivvalue">Enter the value to take the derivative at:</label>
-    <input id="derivvalue" name="derivvalue" type="number" value=3>
+    <input id="derivvalue" name="derivvalue" type="number" value=3 onchange="reloadCalculations()">
     <br>
     <p>\(f_{-}'(a)=\)<span id=leftDerivCalculation></span></p>
     <p>\(f_{+}'(a)=\)<span id=rightDerivCalculation></span></p>
