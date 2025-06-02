@@ -11,7 +11,10 @@
     <input id="func" name="func" type="text" value="2x+5" />
     <br>
     <label for="delta">Enter a value for delta/step size:</label>
-    <input id="delta" min="0" name="delta" type="number" value="0.00001">
+    <input id="delta" min=0 name="delta" type="number" value=0.00001>
+    <br>
+    <label for="err">Enter a value for the maximum error:</label>
+    <input id="err" min=0 name="err" type="number" value=0.001>
   </p>
   <p><label for="options">Choose something to calculate:</label></p>
   <select id="options" name="options" autocomplete="off" onchange="toggleAll(this)">
@@ -24,28 +27,34 @@
     <option value="lagrange">Lagrange Error Bound</option>
   </select>
   <div id="limitcalculator">
-    <p>\(lim_{x\to a^-} f(x)=\)</p>
-    <p>\(lim_{x\to a^+} f(x)=\)</p>
-    <p>\(lim_{x\to a} f(x)=\)</p>
+    <label for="limvalue">Enter a value to approach:</label>
+    <input id="limvalue" min=0 name="limvalue" type="number" value=5>
+    <br>
+    <p>\(lim_{x\to a^-} f(x)=<span id=leftLimCalculation></span>\)</p>
+    <p>\(lim_{x\to a^+} f(x)=<span id=rightLimCalculation></span>\)</p>
+    <p>\(lim_{x\to a} f(x)=<span id=limCalculation></span>\)</p>
   </div>
   <div id="derivcalculator" style="display:none;">
-    <p>\(f_{-}'(a)=\)</p>
-    <p>\(f_{+}'(a)=\)</p>
-    <p>\(f'(a)=\)</p>
+    <label for="derivvalue">Enter the value to take the derivative at:</label>
+    <input id="derivvalue" min=0 name="derivvalue" type="number" value=3>
+    <br>
+    <p>\(f_{-}'(a)=<span id=leftDerivCalculation></span>\)</p>
+    <p>\(f_{+}'(a)=<span id=rightDerivCalculation></span>\)</p>
+    <p>\(f'(a)=<span id=derivCalculation></span>\)</p>
   </div>
   <div id="difeqcalculator" style="display:none;">
-    <p>\(g(c)=\)</p>
+    <p>\(g(c)=<span id=difeqCalculation></span>\)</p>
   </div>
   <div id="integralcalculator" style="display:none;">
-    <p>\(\int_a^b f(x) dx=\)</p>
+    <p>\(\int_a^b f(x) dx=<span id=integralCalculation></span>\)</p>
   </div>
   <div id="volumecalculator" style="display:none;">
-    <p>\(V=\)</p>
+    <p>\(V=<span id=volumeCalculation></span>\)</p>
   </div>
   <div id="arclengthcalculator" style="display:none;">
-    <p>\(L=\)</p>
+    <p>\(L=<span id=lengthCalculation></span>\)</p>
   </div>
   <div id="lagrangecalculator" style="display:none;">
-    <p>\(E=\)</p>
+    <p>\(E=<span id=errorCalculation></span>\)</p>
   </div>
 </body>
