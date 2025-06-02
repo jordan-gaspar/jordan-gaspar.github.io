@@ -44,4 +44,20 @@ function reloadCalculations()
   document.getElementById("leftDerivCalculation").innerHTML = leftDerivative(func, derivValue, delta);
   document.getElementById("rightDerivCalculation").innerHTML = rightDerivative(func, derivValue, delta);
   document.getElementById("derivCalculation").innerHTML = derivative(func, derivValue, delta, maxError);
+  //DIFFERENTIAL EQUATIONS
+
+  //INTEGRALS
+  const integralLower = parseFloat(document.getElementById("integralLowerBound").value);
+  const integralUpper = parseFloat(document.getElementById("integralUpperBound").value);
+  document.getElementById("integralCalculation").innerHTML = integrate(func, integralLower, integralUpper, delta);
+  //VOLUMES
+
+  //ARCLENGTHS
+  
+  //LAGRANGE ERROR BOUND
+  const lagrangeN = parseFloat(document.getElementById("lagrangeN").value);
+  const lagrangeC = parseFloat(document.getElementById("lagrangeC").value);
+  const lagrangeX = parseFloat(document.getElementById("lagrangeX").value);
+  const lagrangeM = parseFloat(document.getElementById("lagrangeM").value);
+  document.getElementById("errorCalculation").innerHTML = lagrangeErrorBound(func, lagrangeX, lagrangeC, lagrangeN, lagrangeM);
 }
