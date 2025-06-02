@@ -32,12 +32,16 @@ function toggleAll(dropdown)
 
 function reloadCalculations()
 {
+  const funcText = document.getElementById("func").value;
+  const func = (x) => {
+    return eval(funcText);
+  };
   const delta = document.getElementById("delta").value;
   const maxError = document.getElementById("err").value;
   //LIMITS
   const limValue = document.getElementById("limValue").value;
-  document.getElementById("leftLimCalculation").innerHTML = calc.leftLimit(, limValue, delta);
-  document.getElementById("rightLimCalculation").innerHTML = calc.rightLimit(, limValue, delta);
-  document.getElementById("limCalculation").innerHTML = calc.limit(, limValue, delta, maxError);
+  document.getElementById("leftLimCalculation").innerHTML = calc.leftLimit(func, limValue, delta);
+  document.getElementById("rightLimCalculation").innerHTML = calc.rightLimit(func, limValue, delta);
+  document.getElementById("limCalculation").innerHTML = calc.limit(func, limValue, delta, maxError);
   //DERIVATIVES
 }
