@@ -51,7 +51,7 @@ function integrate(func, a, b, delta)
 {
     if (a > b)
     {
-        return integrate(func, b, a, delta);
+        return -1*integrate(func, b, a, delta);
     }
     
     let sum = 0;
