@@ -1,14 +1,14 @@
-export function leftLimit(func, x, delta)
+function leftLimit(func, x, delta)
 {
     return func(x - delta);
 }
 
-export function rightLimit(func, x, delta)
+function rightLimit(func, x, delta)
 {
     return func(x + delta);
 }
 
-export function limit(func, x, delta, maxError)
+function limit(func, x, delta, maxError)
 {
     const leftLim = leftLimit(func, x, delta);
     const rightLim = rightLimit(func, x, delta);
@@ -22,17 +22,17 @@ export function limit(func, x, delta, maxError)
     }
 }
 
-export function leftDerivative(func, x, delta)
+function leftDerivative(func, x, delta)
 {
     return (func(x) - func(x - delta))/delta;
 }
 
-export function rightDerivative(func, x, delta)
+function rightDerivative(func, x, delta)
 {
     return (func(x + delta) - func(x))/delta;
 }
 
-export function derivative(func, x, delta, maxError)
+function derivative(func, x, delta, maxError)
 {
     const leftDeriv = leftDerivative(func, x, delta);
     const rightDeriv = rightDerivative(func, x, delta);
@@ -47,7 +47,7 @@ export function derivative(func, x, delta, maxError)
 }
 
 //trapezoidal riemann sum
-export function integrate(func, a, b, delta)
+function integrate(func, a, b, delta)
 {
     if (a > b)
     {
@@ -66,7 +66,7 @@ export function integrate(func, a, b, delta)
 }
 
 //Euler's method
-export function solveDifferentialEquation(func, t, x, y, delta) //finds f(t)
+function solveDifferentialEquation(func, t, x, y, delta) //finds f(t)
 {
   if (t < x)
   {
@@ -94,19 +94,19 @@ export function solveDifferentialEquation(func, t, x, y, delta) //finds f(t)
   }
 }
 
-export function calculateVolume(areaFunc, a, b, delta)
+function calculateVolume(areaFunc, a, b, delta)
 {
     return integrate(areaFunc, a, b, delta);
 }
 
-export function arcLength(func, a, b, delta, maxError)
+function arcLength(func, a, b, delta, maxError)
 {
     return integrate((x) => {
                         return Math.sqrt(1 + Math.pow(derivative(func, x, delta, maxError), 2));
                     }, a, b, delta);
 }
 
-export function factorial(n)
+function factorial(n)
 {
     if (n == 0)
     {
@@ -118,7 +118,7 @@ export function factorial(n)
     }
 }
 
-export function lagrangeErrorBound(func, x, c, n, M)
+function lagrangeErrorBound(func, x, c, n, M)
 {
     return M*Math.pow(x - c, n + 1)/factorial(n + 1);
 }
