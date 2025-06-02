@@ -48,7 +48,9 @@ function reloadCalculations()
   const difeqT = parseFloat(document.getElementById("difeqT").value);
   const difeqX = parseFloat(document.getElementById("difeqX").value);
   const difeqY = parseFloat(document.getElementById("difeqY").value);
-  document.getElementById("difeqCalculation").innerHTML = solveDifferentialEquation(func, difeqT, difeqX, difeqY, delta);
+  const difeqFuncText = document.getElementById("difeqFunc").value;
+  const difeqFunc = new Function("x", "y", "return " + difeqFuncText);
+  document.getElementById("difeqCalculation").innerHTML = solveDifferentialEquation(difeqFunc, difeqT, difeqX, difeqY, delta);
   //INTEGRALS
   const integralLower = parseFloat(document.getElementById("integralLowerBound").value);
   const integralUpper = parseFloat(document.getElementById("integralUpperBound").value);
