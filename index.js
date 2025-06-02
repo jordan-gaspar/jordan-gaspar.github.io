@@ -40,4 +40,8 @@ function reloadCalculations()
   document.getElementById("rightLimCalculation").innerHTML = rightLimit(func, limValue, delta);
   document.getElementById("limCalculation").innerHTML = limit(func, limValue, delta, maxError);
   //DERIVATIVES
+  const derivValue = parseFloat(document.getElementById("derivValue").value);
+  document.getElementById("leftDerivCalculation").innerHTML = leftDerivative(func, derivValue, delta);
+  document.getElementById("rightDerivCalculation").innerHTML = rightDerivative(func, derivValue, delta);
+  document.getElementById("derivCalculation").innerHTML = derivative(func, derivValue, delta, maxError);
 }
