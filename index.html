@@ -28,16 +28,16 @@
     <option value="lagrange">Lagrange Error Bound</option>
   </select>
   <div id="limitcalculator">
-    <label for="limvalue">Enter a value to approach:</label>
-    <input id="limvalue" name="limvalue" type="number" value=5 onchange="reloadCalculations()">
+    <label for="limValue">Enter a value to approach:</label>
+    <input id="limValue" name="limValue" type="number" value=5 onchange="reloadCalculations()">
     <br>
     <p>\(lim_{x\to a^-} f(x)=\)<span id=leftLimCalculation></span></p>
     <p>\(lim_{x\to a^+} f(x)=\)<span id=rightLimCalculation></span></p>
     <p>\(lim_{x\to a} f(x)=\)<span id=limCalculation></span></p>
   </div>
   <div id="derivcalculator" style="display:none;">
-    <label for="derivvalue">Enter the value to take the derivative at:</label>
-    <input id="derivvalue" name="derivvalue" type="number" value=3 onchange="reloadCalculations()">
+    <label for="derivValue">Enter the value to take the derivative at:</label>
+    <input id="derivValue" name="derivValue" type="number" value=3 onchange="reloadCalculations()">
     <br>
     <p>\(f_{-}'(a)=\)<span id=leftDerivCalculation></span></p>
     <p>\(f_{+}'(a)=\)<span id=rightDerivCalculation></span></p>
