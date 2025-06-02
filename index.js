@@ -1,4 +1,4 @@
-const options = ["limit", "deriv", "extreme", "difeq", "integral", "volume", "arclength", "lagrange"];
+const options = ["limit", "deriv", "difeq", "integral", "volume", "arclength", "lagrange"];
 
 function show(div)
 {
