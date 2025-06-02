@@ -53,7 +53,9 @@ function reloadCalculations()
   //VOLUMES
 
   //ARCLENGTHS
-  
+  const lengthLower = parseFloat(document.getElementById("lengthLowerBound").value);
+  const lengthUpper = parseFloat(document.getElementById("lengthUpperBound").value);
+  document.getElementById("lengthCalculation").innerHTML = arcLength(func, lengthLower, lengthUpper, delta, maxError);
   //LAGRANGE ERROR BOUND
   const lagrangeN = parseFloat(document.getElementById("lagrangeN").value);
   const lagrangeC = parseFloat(document.getElementById("lagrangeC").value);
