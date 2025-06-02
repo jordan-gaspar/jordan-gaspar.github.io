@@ -51,7 +51,11 @@ function reloadCalculations()
   const integralUpper = parseFloat(document.getElementById("integralUpperBound").value);
   document.getElementById("integralCalculation").innerHTML = integrate(func, integralLower, integralUpper, delta);
   //VOLUMES
-
+  const volumeLower = parseFloat(document.getElementById("volumeLowerBound").value);
+  const volumeUpper = parseFloat(document.getElementById("volumeUpperBound").value);
+  const areaFuncText = document.getElementById("volFunc").value;
+  const areaFunc = new Function("x", "return " + areaFuncText);
+  document.getElementById("volumeCalculation").innerHTML = calculateVolume(areaFunc, volumeLower, volumeUpper, delta);
   //ARCLENGTHS
   const lengthLower = parseFloat(document.getElementById("lengthLowerBound").value);
   const lengthUpper = parseFloat(document.getElementById("lengthUpperBound").value);
