@@ -58,7 +58,7 @@ export function integrate(func, a, b, delta)
     let i = a;
     while (i <= b)
     {
-        sum += (delta)*((func(i)+func(i+delta)/2);
+        sum += (delta)*((func(i)+func(i+delta))/2);
         i += delta;
     }
     
