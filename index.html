@@ -47,6 +47,12 @@
     <p>\(g(c)=\)<span id=difeqCalculation></span></p>
   </div>
   <div id="integralcalculator" style="display:none;">
+    <label for="integralLowerBound">Enter a lower bound:</label>
+    <input id="integralLowerBound" name="integralLowerBound" type="number" value=-2 onchange="reloadCalculations()">
+    <br>
+    <label for="integralUpperBound">Enter an upper bound:</label>
+    <input id="integralUpperBound" name="integralUpperBound" type="number" value=4 onchange="reloadCalculations()">
+    <br>
     <p>\(\int_a^b f(x) dx=\)<span id=integralCalculation></span></p>
   </div>
   <div id="volumecalculator" style="display:none;">
@@ -56,6 +62,18 @@
     <p>\(L=\)<span id=lengthCalculation></span></p>
   </div>
   <div id="lagrangecalculator" style="display:none;">
+    <label for="lagrangeN">Enter the degree of the taylor polynomial:</label>
+    <input id="lagrangeN" name="lagrangeN" min=0 type="number" value=3 onchange="reloadCalculations()">
+    <br>
+    <label for="lagrangeC">Enter the centre of the taylor polynomial:</label>
+    <input id="lagrangeC" name="lagrangeC" type="number" value=0 onchange="reloadCalculations()">
+    <br>
+    <label for="lagrangeX">Enter the x value to evaluate at:</label>
+    <input id="lagrangeX" name="lagrangeX" type="number" value=2 onchange="reloadCalculations()">
+    <br>
+    <label for="lagrangeM">Enter the maximum of the absolute value of the N+1th derivative of your function:</label>
+    <input id="lagrangeM" name="lagrangeM" type="number" value=30 onchange="reloadCalculations()">
+    <br>
     <p>\(E=\)<span id=errorCalculation></span></p>
   </div>
 </body>
