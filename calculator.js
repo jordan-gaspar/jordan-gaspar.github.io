@@ -106,10 +106,6 @@ function arcLength(func, a, b, delta, maxError)
                     }, a, b, delta);
 }
 
-function lagrangeM()
-{
-}
-
 function factorial(n)
 {
     if (n == 0)
@@ -122,9 +118,7 @@ function factorial(n)
     }
 }
 
-function lagrangeErrorBound(func, x, c, n)
+function lagrangeErrorBound(func, x, c, n, M)
 {
-    const M;
-
     return M*Math.pow(x - c, n + 1)/factorial(n + 1);
 }
