@@ -1,4 +1,4 @@
-import * as calc from "calculator.js";
+import * as calc from "./calculator.js";
 
 const options = ["limit", "deriv", "difeq", "integral", "volume", "arclength", "lagrange"];
 
