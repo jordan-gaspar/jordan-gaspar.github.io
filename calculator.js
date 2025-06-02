@@ -1,29 +1,17 @@
-function f(x)
+function leftLimit(func, x, delta)
 {
-    return x;
+    return func(x - delta);
 }
 
-function dg(x, y)
+function rightLimit(func, x, delta)
 {
-  return 2x + y;
+    return func(x + delta);
 }
 
-
-
-function leftLimit(x, delta)
+function limit(func, x, delta, maxError)
 {
-    return f(x - delta);
-}
-
-function rightLimit(x, delta)
-{
-    return f(x + delta);
-}
-
-function limit(x, delta, maxError)
-{
-    leftLim = leftLimit(x, delta);
-    rightLim = rightLimit(x, delta);
+    leftLim = leftLimit(func, x, delta);
+    rightLim = rightLimit(func, x, delta);
     if (Math.abs(leftLim - rightLim) <= maxError)
     {
         return (leftLim + rightLim)/2;
@@ -34,20 +22,20 @@ function limit(x, delta, maxError)
     }
 }
 
-function leftDerivative(x, delta)
+function leftDerivative(func, x, delta)
 {
-    return (f(x) - f(x - delta))/delta;
+    return (func(x) - func(x - delta))/delta;
 }
 
-function rightDerivative(x, delta)
+function rightDerivative(func, x, delta)
 {
-    return (f(x + delta) - f(x))/delta;
+    return (func(x + delta) - func(x))/delta;
 }
 
-function derivative(x, delta, maxError)
+function derivative(func, x, delta, maxError)
 {
-    leftDeriv = leftDerivative(x, delta);
-    rightDeriv = rightDerivative(x, delta);
+    leftDeriv = leftDerivative(func, x, delta);
+    rightDeriv = rightDerivative(func, x, delta);
     if (Math.abs(leftDeriv - rightDeriv) <= maxError)
     {
         return (leftDeriv + rightDeriv)/2;
@@ -59,18 +47,18 @@ function derivative(x, delta, maxError)
 }
 
 //trapezoidal riemann sum
-function integrate(a, b, delta)
+function integrate(func, a, b, delta)
 {
     if (a > b)
     {
-        return integrate(b, a, delta);
+        return integrate(func, b, a, delta);
     }
     
     sum = 0;
     i = a;
     while (i <= b)
     {
-        sum += (delta)*((f(i)+f(i+delta)/2);
+        sum += (delta)*((func(i)+func(i+delta)/2);
         i += delta;
     }
     
@@ -78,13 +66,13 @@ function integrate(a, b, delta)
 }
 
 //Euler's method
-function solveDifferentialEquation(t, x, y, delta) //finds f(t)
+function solveDifferentialEquation(func, t, x, y, delta) //finds f(t)
 {
   if (t < x)
   {
     while (x > t)
     {
-      slope = dg(x, y);
+      slope = func(x, y);
       y = -1*slope*delta + y;
       x -= delta;
     }
@@ -94,7 +82,7 @@ function solveDifferentialEquation(t, x, y, delta) //finds f(t)
   {
     while (x < t)
     {
-      slope = dg(x, y);
+      slope = func(x, y);
       y = slope*delta + y;
       x += delta;
     }
@@ -104,4 +92,9 @@ function solveDifferentialEquation(t, x, y, delta) //finds f(t)
   {
     return y;
   }
+}
+
+function calculateVolume()
+{
+    return integrate
 }
